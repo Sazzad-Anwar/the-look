@@ -1,0 +1,67 @@
+<%- include('./partials/header') %>
+<%- include('./partials/flash') %>
+
+<div class="cont">
+    <div class="form sign-in mt-5">
+        <form action="/login" method="POST">
+            <h2>Welcome back,</h2>
+            <label>
+                <input class="file-path validate" type="email" name="email" placeholder="Email">
+            </label>
+            <label>
+                <input class="file-path validate" type="password" name="password" placeholder="Password">
+            </label>
+            <button type="submit" class="submit waves-effect waves-light">Sign In</button>
+        </form>
+    </div>
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img__text m--up">
+                <h2 style="color: white;">New here?</h2>
+                <p style="color: white;">Sign up and discover great amount of new opportunities!</p>
+            </div>
+            <div class="img__text m--in">
+                <h2 style="color: white;">One of us?</h2>
+                <p style="color: white;">If you already has an account, just sign in. We've missed you!</p>
+            </div>
+            <div class="img__btn">
+                <span class="m--up">Sign Up</span>
+                <span class="m--in">Sign In</span>
+            </div>
+        </div>
+        <div class="form sign-up">
+            <h2>Time to feel like home,</h2>
+            <form action="/registration" method="POST">
+                <label>
+                    <input class="file-path validate" type="text" name="name" placeholder="Name">
+                </label>
+                <label>
+                    <input class="file-path validate" type="email" name="email" placeholder="Email">
+                </label>
+                <label>
+                    <input class="file-path validate" type="text" name="phone" placeholder="Phone">
+                </label>
+                <label>
+                    <input class="file-path validate" type="text" name="country" placeholder="Country">
+                </label>
+                <label>
+                    <input class="file-path validate" type="text" name="typeOfPhotographer" placeholder="Type of photographer">
+                </label>
+                <label>
+                    <input class="file-path validate" type="password" name="password" placeholder="Password">
+                </label>
+                <label>
+                    <input class="file-path validate" type="password" name="password2" placeholder="Confirm Password">
+                </label>
+                <button type="submit" class="submit waves-effect waves-light">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelector('.img__btn').addEventListener('click', function () {
+        document.querySelector('.cont').classList.toggle('s--signup');
+    });
+</script>
+
+<%- include('./partials/footer') %>

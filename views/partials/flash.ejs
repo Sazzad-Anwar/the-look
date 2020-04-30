@@ -1,0 +1,19 @@
+<% if(success_msg != ''){ %>
+    <div class="uk-alert-success uk-text-center" style="z-index: 2;margin:0% 26.5%" uk-alert>
+        <a class="uk-alert-close" uk-close></a>
+        <p><%= success_msg %> </p>
+    </div>
+    </div>
+    <% } %> <% if(error_msg != ''){ %>
+        <div class="uk-alert-danger uk-text-center" style="z-index: 2;margin:0% 26.5%" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p><%= error_msg %> </p>
+        </div>
+    </div>
+    <% } %> <% if(error != ''){ %>
+        <div class="uk-alert-danger uk-text-center" style="z-index: 2;margin:0% 26.5%" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p><%= error %> </p>
+        </div>
+    <% } %>
+    

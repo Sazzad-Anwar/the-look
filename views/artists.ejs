@@ -1,0 +1,39 @@
+<%- include('./partials/header') %>
+
+<!-- Artists page -->
+<section class="artists-page page-warp" style="background-color: white;">
+	<div class="sp-container">
+		<div class="page-title">
+			<h2>Artists</h2>
+		</div>
+		<div class="row ">
+			<% artists.forEach(artist => { %>
+			<div class="col-lg-4 col-sm-6 artists-col">
+				<div class="artists-item uk-box-shadow-small uk-box-shadow-hover-xlarge text-center pb-3"
+					style="border-radius: 10px;">
+					<% if (!artist.profile_pic) { %>
+					<p>No Profile Picture for this Artist</p>
+					<% } else{ %>
+					<img src="<%= artist.profile_pic %>" style="height: 400px;width: 400px;" alt="<%= artist.name %>">
+					<% } %>
+					<h4><%= artist.name %></h4>
+					<span><%= artist.typeOfPhotographer %></span>
+					<span><%= artist.email %></span>
+					<span><%= artist.phone %></span>
+					<span><%= artist.country %></span>
+					<span>
+						<form action="/ArtistGallery" method="post">
+							<input type="hidden" name="id" value="<%= artist.email %>">
+							<button class="waves-effect waves-light btn"
+								style="background-color: #EDEDED;color:grey">See Photo Gallery</button>
+						</form>
+					</span>
+				</div>
+			</div>
+			<% }) %>
+		</div>
+	</div>
+</section>
+<!-- Artists page end -->
+
+<%- include('./partials/footer') %>

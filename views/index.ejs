@@ -1,0 +1,80 @@
+<%- include('./partials/header') %>
+
+<!-- Hero section -->
+<section class="hero-section">
+	<div class="hero-slider owl-carousel">
+		<% found.forEach(element => { %>
+		<% let photo = element.photo_collection %>
+		<% photo.map(ele=>{ %>
+		<div class="hs-item">
+			<div class="hs-bg set-bg sm-overlay" data-setbg="<%= ele.image %> "></div>
+			<div class="sp-container">
+				<div class="hs-text">
+					<h2>The Look<br>Gallery</h2>
+					<p style="margin-left: -100px;font-size: 30px;"><%= element.name %> <br><%= ele.createdAt %> </p>
+					<a href="/gallery" class="site-btn sb-big">View More <img src="img/icons/arrow-right-black.png"
+							alt=""></a>
+				</div>
+			</div>
+		</div>
+		<% }) %>
+		<% }) %>
+
+	</div>
+</section>
+<!-- Hero section end -->
+
+<!-- Gallery section -->
+<section class="gallery-section">
+	<div class="sp-container">
+		<div class="row m-0">
+			<div class="col-md-6 p-0">
+				<div class="gallery-left-col">
+					<div class="gallery-text">
+						<h2>“The camera makes you forget you’re there. It’s not like you are hiding but you forget, you
+							are just looking so much.”</h2>
+						<p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis nulla
+							pretium, vitae ornare leo sollicitudin. Aenean quis velit pulvinar, pellentesque neque vel,
+							laoreet orci. Suspendisse potenti. </p>
+					</div>
+					<% found.forEach(element => { %>
+					<% let photo = element.photo_collection %>
+					<% photo.map(ele=>{ %>
+					<div class="gallery-item">
+						<img src="<%= ele.image %> " alt="#">
+						<h4><%= ele.caption %> </h4>
+						<p><%= element.name %> </p>
+					</div>
+					<% }) %>
+					<% }) %>
+				</div>
+			</div>
+			<div class="col-md-6 p-0">
+				<div class="gallery-left-col">
+					<% found.forEach(element => { %>
+					<% let photo = element.cover_pic %>
+					<% photo.map((ele=>{ %>
+					<div class="gallery-item">
+						<img src="<%= ele.image %> " alt="#">
+						<h4><%= ele.caption %> </h4>
+						<p><%= element.name %> </p>
+					</div>
+					<% })) %>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Gallery section end -->
+
+<!-- Blog section -->
+<section class="blog-section">
+	<div class="sp-container">
+		<p>copyright | All rights reserved to it's developer</script></p>
+	</div>
+</section>
+
+<!-- Blog section end -->
+
+<%- include('./partials/footer') %>

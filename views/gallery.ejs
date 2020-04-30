@@ -1,0 +1,60 @@
+<%- include('./partials/header') %>
+
+<!-- Blog page -->
+<section class="blog-page page-warp" style="background-color: white;">
+	<div class="sp-container">
+		<div class="row m-0">
+			<div class="col-md-6 p-0">
+				<div class="gallery-left-col">
+					<div class="gallery-text">
+						<div class="page-title ml-5 pl-5">
+							<h2>Gallery</h2>
+							<p>The look's artists' gallery exhibitions. Here the pictures are not only the pictures, these are weapons,
+								these are messages, these are emotions, these are cultures, these are the world.
+							</p>
+						</div>
+					</div>
+					<% gallery.forEach(element => { %>
+					<% let photo = element.photo_collection %>
+					<% photo.map(ele=>{ %>
+					<div class="gallery-item">
+						<img src="<%= ele.image %> " alt="#">
+						<h4><%= ele.caption %> </h4>
+						<p><%= element.name %> </p>
+						<p><%= ele.createdAt %> </p>
+						<form action="/ArtistGallery" method="post">
+							<input type="hidden" name="id" value="<%= element.email %>">
+							<button type="submit" class="site-btn" style="padding: 10px;">view gallery <img
+									src="img/icons/arrow-right-black.png" alt=""></button>
+						</form>
+					</div>
+					<% }) %>
+					<% }) %>
+				</div>
+			</div>
+			<div class="col-md-6 p-0">
+				<div class="gallery-left-col">
+					<% gallery.forEach(element => { %>
+					<% let photo = element.cover_pic %>
+					<% photo.map((ele=>{ %>
+					<div class="gallery-item">
+						<img src="<%= ele.image %> " alt="#">
+						<h4><%= ele.caption %> </h4>
+						<p><%= element.name %> </p>
+						<form action="/ArtistGallery" method="post">
+							<input type="hidden" name="id" value="<%= element.email %>">
+							<button type="submit" class="site-btn" style="padding: 10px;">view gallery <img
+									src="img/icons/arrow-right-black.png" alt=""></button>
+						</form>
+					</div>
+					<% })) %>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+<!-- Blog page end -->
+
+<%- include('./partials/footer') %>

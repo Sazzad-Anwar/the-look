@@ -1,0 +1,63 @@
+<%- include('./partials/header') %>
+
+<!-- Blog page -->
+<section class="blog-page page-warp" style="background-color: white;">
+    <div class="sp-container">
+        <div class="row m-0">
+            <div class="col-md-6 p-0">
+                <div class="gallery-left-col">
+                    <div class="gallery-text">
+                        <div class="page-title ml-5 pl-5">
+                            <h2>Gallery of</h2>
+                            <h3>Artist: <%= gallery.name %> </h3>
+                            <p>The look's artists' gallery exhibitions. Here the pictures are not only the pictures,
+                                these are weapons,
+                                these are messages, these are emotions, these are cultures, these are the world.
+                            </p>
+                        </div>
+                        <h2>Gallery Photo</h2>
+                    </div>
+                    <% let photo = gallery.photo_collection %>
+                    <% photo.forEach(ele=>{ %>
+                    <div class="gallery-item">
+                        <div uk-grid uk-lightbox="animation:scale">
+                            <div>
+                                <a class="uk-inline" href="<%= ele.image %>" data-caption="<%= ele.caption %>">
+                                    <img src="<%= ele.image %>" alt="photo_gallery">
+                                    <h4><%= ele.caption %> </h4>
+                                    <p><%= ele.name %> </p>
+                                    <p><%= ele.createdAt %> </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="gallery-left-col">
+                    <div class="gallery-text">
+                        <h2>Cover Photo</h2>
+                    </div>
+                    <% let photoCover = gallery.cover_pic %>
+                    <% photoCover.map((ele=>{ %>
+                    <div class="gallery-item">
+                        <div uk-grid uk-lightbox="animation: scale">
+                            <a class="uk-inline" href="<%= ele.image %>" data-caption="<%= ele.caption %>">
+                                <img src="<%= ele.image %>" alt="photo_gallery">
+                                <h4><%= ele.caption %> </h4>
+                                <p><%= ele.name %> </p>
+                                <p><%= ele.createdAt %> </p>
+                            </a>
+                        </div>
+                    </div>
+                    <% })) %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Blog page end -->
+
+<%- include('./partials/footer') %>
