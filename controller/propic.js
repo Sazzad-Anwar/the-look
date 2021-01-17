@@ -3,6 +3,7 @@
 // User can upload the profile picture and the picture will be saved in the public folder and the picture name will be saved into database
 const multer = require("multer");
 const user = require('../model/db');
+const fs = require("fs");
 
 var storage1 = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -29,15 +30,15 @@ exports.propic =(upload1.single("profilePic"), (req, res) => {
   
   if (mimetype == "jpg" || mimetype == "png") {
     let dateTime = new Date();
-    let options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      minute: '2-digit',
-      hour: '2-digit'
-    };
-    let date = dateTime.toLocaleDateString('en-US', options);
+    // let options = {
+    //   weekday: "long",
+    //   year: "numeric",
+    //   month: "long",
+    //   day: "numeric",
+    //   minute: '2-digit',
+    //   hour: '2-digit'
+    // };
+    // let date = dateTime.toLocaleDateString('en-US', options);
     let path = req.file.path.split("\\");
     let image = path[1] + "/" + path[2];
     

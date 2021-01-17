@@ -50,7 +50,7 @@
 
 <!-- body area -->
 <div class="row">
-    <h3 class=" uk-align-center ">Hey <%= user.name %> ! Have a nice photography collection!! </h3>
+    <h4 class=" uk-align-justify px-4">Hey <%= user.name %> ! Have a nice photography collection!! </h4>
 </div>
 <div class="container">
     <h2 class="my-5">Gallery Photo</h2>
@@ -232,7 +232,7 @@
                     <span>Photo</span>
                     <input type="file" name="profilePic" required>
                     <input type="hidden" name="email" value="<%= user.email %>">
-                    <input type="text" name="pic" value="<%= user.profile_pic %>">
+                    <input type="hidden" name="pic" value="<%= user.profile_pic %>">
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text" placeholder="Upload a profile picture" required>
@@ -283,7 +283,7 @@
             <div class="file-field input-field">
                 <div class="input-field">
                     <input class="validate" type="text" name="name" placeholder="Edit Name" required>
-                    <input class="validate" type="text" name="id" value="<%= user._id %>">
+                    <input class="validate" type="hidden" name="id" value="<%= user._id %>">
                 </div>
                 <button class="btn waves-effect waves-light btn-block grey" type="submit"
                     onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Name is being saved'})">Upload
@@ -303,7 +303,7 @@
                 <div class="input-field">
                     <input class="validate" type="text" name="typeOfPhotographer" placeholder="Edit Photography Type"
                         required>
-                    <input class="validate" type="text" name="id" value="<%= user._id %>" hidden>
+                    <input class="validate" type="hidden" name="id" value="<%= user._id %>" hidden>
                 </div>
                 <button class="btn waves-effect waves-light btn-block grey" type="submit"
                     onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Photography type is being saved'})">Upload
@@ -322,7 +322,7 @@
             <div class="file-field input-field">
                 <div class="input-field">
                     <input class="validate" type="text" name="email" placeholder="Edit Email" required>
-                    <input class="validate" type="text" name="id" value="<%= user._id %>" hidden>
+                    <input class="validate" type="hidden" name="id" value="<%= user._id %>" hidden>
                 </div>
                 <button class="btn waves-effect waves-light btn-block grey" type="submit"
                     onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Email is being saved'})">Upload
@@ -341,7 +341,7 @@
             <div class="file-field input-field">
                 <div class="input-field">
                     <input class="validate" type="text" name="phone" placeholder="Edit Phone Number" required>
-                    <input class="validate" type="text" name="id" value="<%= user._id %>" hidden>
+                    <input class="validate" type="hidden" name="id" value="<%= user._id %>" hidden>
                 </div>
                 <button class="btn waves-effect waves-light btn-block grey" type="submit"
                     onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Phone Number is being saved'})">Upload
@@ -360,7 +360,7 @@
             <div class="file-field input-field">
                 <div class="input-field">
                     <input class="validate" type="text" name="name" placeholder="Edit Country Name" required>
-                    <input class="validate" type="text" name="id" value="<%= user._id %>" hidden>
+                    <input class="validate" type="hidden" name="id" value="<%= user._id %>" hidden>
                 </div>
                 <button class="btn waves-effect waves-light btn-block grey" type="submit"
                     onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Country Name is being saved'})">Upload
